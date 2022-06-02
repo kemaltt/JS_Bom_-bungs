@@ -53,9 +53,9 @@
         <p id="output_counter">00:00</p>
         <form action="">
             <input type="number" name="number" id="input_minute" placeholder="Minuten übrig...">
-            <input type="button" class="btn" id="start" value="Start Countdown">
-            <input type="button" class="btn" id="pause" value="Pause Countdown">
-            <input type="button" class="btn" id="restart" value="Restart Countdown">
+            <input type="button" onclick="getStart()" id="start" value="Start Countdown">
+            <input type="button" onclick="getPause()" id="pause" value="Pause Countdown">
+            <input type="button" onclick="getContinue()" id="restart" value="Continue Countdown">
         </form>
     </section>
     <script src="assets/js/main.js"></script>

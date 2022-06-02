@@ -61,6 +61,7 @@ section:nth-of-type(2) p {
     font-size: 22px;
     width: 85%;
     margin: 110px auto 40px;
+    text-align: center;
 }
 
 section:nth-of-type(2) #count {
@@ -69,7 +70,7 @@ section:nth-of-type(2) #count {
 }
 
 section:nth-of-type(3) {
-    margin: 5vh 20%;
+    margin: 5vh 25%;
     padding: 5vh 3%;
     background-color: #FECD45;
     text-align: center;
@@ -85,7 +86,7 @@ section:nth-of-type(3) .counter_container {
 }
 
 section:nth-of-type(4) {
-    margin: 5vh 20%;
+    margin: 5vh 30%;
     padding: 5vh 3%;
     background-color: #DDFDC4;
     text-align: center;

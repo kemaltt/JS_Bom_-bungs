@@ -40,17 +40,18 @@ let count = 100;
 
 btn.addEventListener('click', () => {
     // console.log('click');
-    timer = setInterval(counter, 50);
+    let counter = () => {
+        // console.log('counter');
+        count--;
+        zeit.innerHTML = `${count}%`;
+        if (count == 0) {
+            clearInterval(timer);
+        }
+    }
+    let timer = setInterval(counter, 50);
 
 });
-let counter = () => {
-    // console.log('counter');
-    count--;
-    zeit.innerHTML = `${count}%`;
-    if (count == 0) {
-        clearInterval(timer);
-    }
-}
+
 
 
 //lev2_1: BOM Meldung=================================
@@ -99,7 +100,7 @@ input_date.addEventListener('change', () => {
         // console.log(day);
         days.innerHTML = `${day}`;
 
-        let hour = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let hour = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60) + 3);
         // console.log(hour);
         hours.innerHTML = `${hour}`;
         let minute = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
@@ -118,30 +119,38 @@ input_date.addEventListener('change', () => {
 
 let output_counter = document.getElementById('output_counter');
 let input_minute = document.getElementById('input_minute');
-let button = document.querySelectorAll('.btn');
+
 
 let sec = 60;
+let timer;
+let counter;
 
-button.forEach(btn => {
-    btn.addEventListener('click', () => {
-        let min = input_minute.value - 1
-            // console.log(btn.id);
-        let counter = () => {
-            if (btn.id == 'start') {
-                sec--;
-                output_counter.innerHTML = `${min}:${sec}`;
-                if (sec == 0) {
-                    min -= 1;
-                    sec = 60;
-                }
+const getStart = () => {
+    let min = input_minute.value - 1
+    console.log(min);
 
-            } else if (btn.id == 'pause') {
-                console.log('pause');
-                clearInterval(timer);
-            }
+    counter = () => {
+
+        sec--;
+        output_counter.innerHTML = `${min}:${sec}`;
+        if (sec === 0) {
+            min -= 1;
+            sec = 60;
+        } else if (min === 0 && sec == 0) {
+            clearInterval(timer);
         }
 
-        let timer = setInterval(counter, 1500);
 
-    });
-})
+    }
+    timer = setInterval(counter, 1000);
+}
+
+const getPause = () => {
+    clearInterval(timer);
+}
+const getContinue = () => {
+    // input_minute.value = ''
+    // output_counter.textContent = '00:00'
+    // clearInterval(timer);
+    timer = setInterval(counter, 1000);
+}

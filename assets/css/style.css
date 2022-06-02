@@ -44,7 +44,7 @@ section:nth-of-type(2) div {
 section:nth-of-type(2) .message {
     font-family: Geneva;
     position: absolute;
-    top: 60%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
@@ -86,7 +86,7 @@ section:nth-of-type(3) .counter_container {
 }
 
 section:nth-of-type(4) {
-    margin: 5vh 30%;
+    margin: 5vh 35%;
     padding: 5vh 3%;
     background-color: #DDFDC4;
     text-align: center;

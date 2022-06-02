@@ -127,7 +127,7 @@ let counter;
 
 const getStart = () => {
     let min = input_minute.value - 1
-    console.log(min);
+        // console.log(min);
 
     counter = () => {
 
